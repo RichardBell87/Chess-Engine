@@ -438,7 +438,9 @@ public class GUI {
     }
 
     static void settingsMenuStartMainMessage() {
-        colorStyleArray(greyStyle, matrixStyle);
+        if (moveCountBeforeGameEnd == PROPERTY) {
+            colorStyleArray(greyStyle, matrixStyle);
+        }
         System.out.print(ANNOTATION_SYMBOL_NEW_LINE
                 + ANNOTATION_SYMBOL_HIDDEN
                 + ANNOTATION_SYMBOL_SPACE
@@ -1338,11 +1340,6 @@ public class GUI {
     }
 
     static void printThePlayingField() {
-
-        if (moveCountBeforeGameEnd == PROPERTY) {
-            colorStyleArray(greyStyle, matrixStyle);
-        }
-
         textAnnotationTop();
         printRow(playingFieldDisplay, displayingAStalemateForTheBlackPlayer, displayingAStalemateForTheWhitePlayer, spaceControlledByTheBlackPlayer, spaceControlledByTheWhitePlayer);
         printRow(playingFieldDisplay, displayingAStalemateForTheBlackPlayer, displayingAStalemateForTheWhitePlayer, spaceControlledByTheBlackPlayer, spaceControlledByTheWhitePlayer, SERVICE_SYMBOL_8, ROW_8_START, ROW_8_END, blackServiceBackgroundColor, whiteServiceBackgroundColor);
